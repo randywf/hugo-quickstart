@@ -69,6 +69,8 @@ jobs:
       - name: Configure Git
         run: |
           git config core.quotepath false
+      - name: Checkout submodules
+        run: git submodule update --init --recursive
       - name: Cache restore
         id: cache-restore
         uses: actions/cache/restore@v4
